@@ -1,0 +1,65 @@
+<div class="wrap">
+    <h2>
+        {{ plugin_data.Name }} {{l10n.s01}}
+    </h2>
+    <br class="clear" />
+
+    <div class="metabox-holder has-right-sidebar" id="poststuff">
+        <div class="inner-sidebar" id="side-info-column">
+            <div class="meta-box-sortables ui-sortable" id="side-sortables">
+                <div class="postbox">
+                    <h3 class="hndle">{{l10n.s02}}</h3>
+                    <div class="inside">
+                        {% autoescape false %}{{l10n.s03}}{% endautoescape %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="post-body">
+            <div id="post-body-content">
+
+                <div class="postbox">
+                    <h3 class="hndle">{{l10n.s01}}</h3>
+
+                    <div class="inside">
+                        <form method="post" action="options.php">
+                            {{ settings_fields | raw}}
+                            <table class="form-table">
+
+                                <tr>
+                                    <th scope="row">
+                                        {{l10n.s04}}
+                                    </th>
+                                    <td>
+                                        <label style="display: block; padding-bottom: 10px;">
+                                            <input type="radio"
+                                                   name="hoodoc_importer_image_type"
+                                                   id="hoodoc_importer_image_type_1"
+                                                   {{ options.hoodoc_importer_image_type == 1 or options.hoodoc_importer_image_type == '' ? 'checked="checked"' }}
+                                                   value="1">
+                                            {{l10n.s05}}
+                                        </label>
+
+                                        <label style="display: block; padding-bottom: 10px;">
+                                            <input type="radio"
+                                                   name="hoodoc_importer_image_type"
+                                                   id="hoodoc_importer_image_type_2"
+                                                   {{ options.hoodoc_importer_image_type == 2 ? 'checked="checked"' }}
+                                                   value="2">
+                                            {{l10n.s06}}
+                                        </label>
+
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="submit">
+                                <input type="submit" name="submit" id="submit" class="button button-primary" value="{{l10n.s07}}">
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

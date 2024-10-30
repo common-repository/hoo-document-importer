@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twig/twig": "^3.0",
+		"phpoffice/phpword": "^0.18.2"
+    }
+}
